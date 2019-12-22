@@ -6,23 +6,33 @@
 \usepackage{graphicx}
 \usepackage[margin=1in]{geometry}
 \usepackage{xcolor}
+\usepackage{changepage}
 
 \usepackage[showframe]{geometry}
 
 \usepackage{titlesec}
 
+\setlength\parindent{0pt}
+
+\definecolor{main-color}{RGB}{254, 23, 23}
+
 \titleformat{\section}[leftmargin]
-{\normalfont
-\sffamily\bfseries\filleft}{}{0pt}{}
+{\normalfont \sffamily \bfseries \filleft}
+{}{0pt}{}
 
 \titlespacing{\section}
-{0pc}{1.5ex plus .1ex minus .2ex}{2pc}
+{5pc}{1.5ex plus .1ex minus .2ex}{2pc}
 
-\newcommand{\itemHeading}[1]{
+\newcommand{\itemHeading}[3]{
 
-    \large
+    \Large
     \bfseries
     \textcolor{main-color}{#1}\
+    \small
+    #3
+    \newline
+    \large
+    #2
     \newline
 
     \normalsize
@@ -35,7 +45,6 @@
 \write18{wget https://tareqdandachi.github.io/resources/logos/logoSq.png}
 
 \newcommand{\logoSq}{\includegraphics[scale=0.27]{logoSq.png}}
-\definecolor{main-color}{RGB}{254, 23, 23}
 
 \huge
 \bfseries
@@ -46,13 +55,15 @@
 \normalsize
 \normalfont
 
+\begin{adjustwidth}{30mm}{0mm}
 
 \section{Education}
-\noindent
-\itemHeading{Massachusetts Institute of Technology}
-Class of 2022
-Candidate for B.S. in Electrical Engineering and Computer Science.
-Candidate for B.S. in Mechanical Engineering concentrating in Biomedical Engineering.
+
+\itemHeading{Massachusetts Institute of Technology}{Class of 2022}{}
+Candidate for B.S. in Electrical Engineering and Computer Science. \\
+Candidate for B.S. in Mechanical Engineering concentrating in Biomedical Engineering. \\
 GPA 4.8/5.0
+
+\end{adjustwidth}
 
 \end{document}
