@@ -7,6 +7,29 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{xcolor}
 
+\usepackage[showframe]{geometry}
+
+\usepackage{titlesec}
+
+\titleformat{\section}[leftmargin]
+{\normalfont
+\sffamily\bfseries\filleft}{}{0pt}{}
+
+\titlespacing{\section}
+{0pc}{1.5ex plus .1ex minus .2ex}{2pc}
+
+\newcommand{\itemHeading}[1]{
+
+    \large
+    \bfseries
+    \textcolor{main-color}{#1}\
+    \newline
+
+    \normalsize
+    \normalfont
+    
+}
+
 \begin{document}
 
 \write18{wget https://tareqdandachi.github.io/resources/logos/logoSq.png}
@@ -22,7 +45,14 @@
 
 \normalsize
 \normalfont
-hi
+
+
+\section{Education}
+\noindent
+\itemHeading{Massachusetts Institute of Technology}
+Class of 2022
+Candidate for B.S. in Electrical Engineering and Computer Science.
+Candidate for B.S. in Mechanical Engineering concentrating in Biomedical Engineering.
+GPA 4.8/5.0
 
 \end{document}
-
