@@ -7,6 +7,7 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{xcolor}
 \usepackage{changepage}
+\usepackage{hyperref}
 
 \usepackage[showframe]{geometry}
 
@@ -20,14 +21,19 @@
 
 \titleformat{\section}[leftmargin]
 {\normalfont \sffamily \bfseries \filleft}
-{}{0pt}{}
+{}{1em}{}
 
 \titlespacing{\section}
 {5pc}{1.5ex plus .1ex minus .2ex}{2pc}
 
-\newcommand{\sectionTitle}[1]{
+\newcommand{\beginTheSection}[1]{
+    \begin{adjustwidth}{15mm}{0mm}
     \section{\textcolor{main-color}{#1}}
 }
+
+\newcommand{\endTheSection}[0]{\end{adjustwidth}}
+
+\newcommand{\linkToSite}[2]{\href{#1}{\color{main-color}{#2}}}%
 
 \newcommand{\itemHeading}[3]{
 
@@ -35,13 +41,14 @@
     \bfseries
     #1
     \small
-    #3
+    \normalfont
+    \hspace{3 mm} #3
     \vspace{1 mm}
     \newline
     \normalsize
+    \bfseries
     #2
     \vspace{2 mm}
-    \newline
 
     \normalsize
     \normalfont
@@ -56,22 +63,38 @@
 
 \huge
 \bfseries
-\raisebox{-.25\height}{\logoSq} & &
+\raisebox{-.25\height}{\logoSq}
 \textcolor{main-color}{Tareq Dandachi}\
 \newline
 
 \normalsize
 \normalfont
 
-\begin{adjustwidth}{30mm}{0mm}
+\beginTheSection{Education}
 
-\sectionTitle{Education}
+\itemHeading{Massachusetts Institute of Technology}{Class of 2022}{}\\
 
-\itemHeading{Massachusetts Institute of Technology}{Class of 2022}{}
 Candidate for B.S. in Electrical Engineering and Computer Science. \\
-Candidate for B.S. in Mechanical Engineering concentrating in Biomedical Engineering. \\
-GPA 4.8/5.0
+Candidate for B.S. in Mechanical Engineering concentrating in Quantum Information & Computation. \\
+GPA 4.9/5.0\\
 
-\end{adjustwidth}
+\endTheSection
+
+\beginTheSection{Work}
+
+\itemHeading{The Tech - MIT}{Head of Technology}{October 2018 - Now}
+
+Worked on the website \linkToSite{https://thetech.com}{thetech.com}, which is written in Ruby, HAML, SCSS, CoffeeScript and JavaScript.
+
+Maintained the Adobe Indesign CMS plug-in that is used by the production department to make the newspapers.
+
+\itemHeading{Assistive Tech - MIT}{Executive}{October 2018 - Now}
+
+Created the website \linkToSite{assistivetech.mit.com}{assistivetech.mit.com} and maintain it.
+Organized ATHack 2019.
+
+Graphic Design, Merchandise and Publicity.
+
+\endTheSection
 
 \end{document}
