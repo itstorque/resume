@@ -14,6 +14,8 @@
 
 \setlength\parindent{0pt}
 
+\renewcommand{\baselinestretch}{1.2}
+
 \definecolor{main-color}{RGB}{254, 23, 23}
 
 \titleformat{\section}[leftmargin]
@@ -23,16 +25,22 @@
 \titlespacing{\section}
 {5pc}{1.5ex plus .1ex minus .2ex}{2pc}
 
+\newcommand{\sectionTitle}[1]{
+    \section{\textcolor{main-color}{#1}}
+}
+
 \newcommand{\itemHeading}[3]{
 
     \Large
     \bfseries
-    \textcolor{main-color}{#1}\
+    #1
     \small
     #3
+    \vspace{1 mm}
     \newline
-    \large
+    \normalsize
     #2
+    \vspace{2 mm}
     \newline
 
     \normalsize
@@ -57,7 +65,7 @@
 
 \begin{adjustwidth}{30mm}{0mm}
 
-\section{Education}
+\sectionTitle{Education}
 
 \itemHeading{Massachusetts Institute of Technology}{Class of 2022}{}
 Candidate for B.S. in Electrical Engineering and Computer Science. \\
